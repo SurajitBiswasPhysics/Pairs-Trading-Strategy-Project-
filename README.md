@@ -55,4 +55,4 @@ If you're working on financial risk modeling, machine learning, or applied deep 
 
 ## 🏷️ Tags
 
-`Artificial Neural Network` `Credit Risk Modeling` `TensorFlow` `Machine Learning` `Data Science` `Finance AI`
+`Pairs Trading' `Cointegration' `Statistical Arbitrage' `Quant Finance' `Backtesting' `Sharpe Ratio'
