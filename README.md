@@ -55,4 +55,4 @@ If you're working on financial risk modeling, machine learning, or applied deep 
 
 ## 🏷️ Tags
 
-`Pairs Trading' `Cointegration' `Statistical Arbitrage' `Quant Finance' `Backtesting' `Sharpe Ratio'
+`Pairs Trading', `Cointegration', `Statistical Arbitrage', `Quant Finance', `Backtesting', `Sharpe Ratio'
