@@ -1,42 +1,76 @@
-📈 Cointegration-Based Pairs Trading Strategy
+# 📈 Statistical Arbitrage: Pairs Trading Strategy
 
-This project implements a market-neutral pairs trading strategy based on cointegration and mean reversion. It combines econometric tests, systematic backtesting, transaction cost modeling, and parameter sensitivity analysis to evaluate profitability and robustness.
+This project implements a **statistical arbitrage (pairs trading) strategy** using a universe of US tech stocks. The goal was to **identify, rank, and backtest mean-reverting stock pairs** that exhibit strong co-movement, and evaluate their profitability both in-sample and out-of-sample.
 
-🔹 Project Overview
+---
 
-Universe: 12 U.S. tech stocks (2020–2025 daily prices, 1403 trading days)
+## 🎯 Project Objective
+- Detect cointegrated pairs of stocks using the **Engle–Granger test**.  
+- Build a **long–short trading strategy** based on the pair’s price spread.  
+- Apply a **Z-score based entry/exit rule** to generate trades.  
+- Backtest performance with transaction costs, evaluating:  
+  - Sharpe ratio  
+  - Total return  
+  - Number of trades  
+  - Win rate  
+- Compare **training vs out-of-sample results** to assess robustness.  
 
-Goal: Identify cointegrated stock pairs, trade mean-reverting spreads, and measure real-world profitability.
+---
 
-Approach:
+## 🛠️ Methodology
+1. **Data**: Daily adjusted close prices of 12 large-cap US tech stocks (2019–2025).  
+2. **Pairs Selection**:  
+   - Engle–Granger cointegration test.  
+   - Prefiltering to reduce false positives.  
+3. **Trading Rules**:  
+   - Enter long/short positions when spread Z-score crosses ±2.  
+   - Exit when Z-score reverts to 0.  
+   - Fixed capital allocation per pair.  
+4. **Backtesting**:  
+   - Train period: ~70% of data (982 trading days).  
+   - Test period: ~30% of data (421 trading days).  
+   - Transaction costs included.  
+5. **Evaluation Metrics**: Sharpe ratio, returns, win rate, trade frequency.  
 
-Pair Selection
+---
 
-Correlation & Engle–Granger cointegration test
+## 📊 Key Results
+- **Total candidate pairs tested**: 66  
+- **Top in-sample performers** (Sharpe ratio ranked):  
+  - `NVDA–ORCL` (Sharpe ≈ 0.66)  
+  - `MSFT–ORCL` (Sharpe ≈ 0.48)  
+  - `GOOG–CSCO` (Sharpe ≈ 0.46, Win rate ≈ 78%)  
 
-ADF test on residuals
+- **Best out-of-sample pair (showcase)**:  
+  - **GOOG–CSCO**  
+  - Robust performance with strong mean reversion and high win rate.  
 
-Rolling-window stability analysis
+- Detailed plots (spreads, signals, PnL) saved in `project_output/plots/`.  
+- Full ranked pair results saved in `project_output/results_pairs_train_vs_oos_with_costs.csv`.  
 
-Top 5 pairs shortlisted (e.g., MSFT–AMD, MSFT–NVDA, GOOG–CSCO)
+---
 
-Trading Logic
+## 🚀 Highlights
+- ✅ Automated **pair discovery, ranking, and backtesting pipeline**.  
+- ✅ Incorporates **transaction costs** for realistic results.  
+- ✅ Identifies **robust trading opportunities** that generalize to out-of-sample data.  
+- ✅ Professional, reproducible workflow suitable for **quantitative finance research**.  
 
-Compute spread & hedge ratio (β)
+---
 
-Generate entry/exit signals from spread z-scores
+## 📂 Project Outputs
+- `results_pairs_train_ranked.csv` → In-sample ranked pairs.  
+- `results_pairs_train_vs_oos_with_costs.csv` → Train vs OOS comparison.  
+- `plots/` → Trading signal & performance visualization.  
 
-Backtest with transaction costs (0.05%–0.30% round-trip)
+---
 
-Evaluation
+## 🔑 Takeaway
+This project demonstrates how to **design, implement, and evaluate a statistical arbitrage (pairs trading) strategy** using cointegration and systematic backtesting.  
+It reflects the **workflow and rigor used in professional quant research roles**, bridging **academic modeling** and **real-world trading applications**.  
 
-CAGR, Sharpe ratio, annualized volatility
+---
 
-Max drawdown, win rate, trade count
-
-Out-of-sample validation
-
-Sensitivity study over multiple z-entry thresholds
 
 ---
 
