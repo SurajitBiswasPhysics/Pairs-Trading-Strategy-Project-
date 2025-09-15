@@ -1,42 +1,42 @@
-# 🔗 Pairs Trading Strategy using Cointegration  
+📈 Cointegration-Based Pairs Trading Strategy
 
-Can we exploit temporary price divergences between cointegrated stocks?  
+This project implements a market-neutral pairs trading strategy based on cointegration and mean reversion. It combines econometric tests, systematic backtesting, transaction cost modeling, and parameter sensitivity analysis to evaluate profitability and robustness.
 
-This project implements a **statistical arbitrage (pairs trading) strategy** using **cointegration analysis** and **z-score–based trading signals**. The idea is to identify stock pairs that move together in the long run, and trade on their short-term deviations.  
+🔹 Project Overview
 
----
+Universe: 12 U.S. tech stocks (2020–2025 daily prices, 1403 trading days)
 
-## 🧠 Project Highlights  
+Goal: Identify cointegrated stock pairs, trade mean-reverting spreads, and measure real-world profitability.
 
-- 📂 Dataset: Daily stock price data (multiple tickers)  
-- 🧮 Methodology: Engle–Granger cointegration test + rolling window analysis  
-- 🎯 Strategy: Long/short based on z-score thresholds  
-- 📈 Output: Trade logs, portfolio NAV curve, performance metrics  
-- ✅ Evaluation: CAGR, Annualized Volatility, Sharpe Ratio, Max Drawdown  
+Approach:
 
----
+Pair Selection
 
-## 🧪 Features & Workflow  
+Correlation & Engle–Granger cointegration test
 
-- **Data Preprocessing** – load & clean stock price data  
-- **Pairs Selection** – find cointegrated stock pairs  
-- **Signal Generation** – z-score–based entry & exit rules  
-- **Backtesting** – simulate trades with transaction costs  
-- **Performance Metrics** – CAGR, Sharpe, Drawdown, Volatility  
-- **Visualization** – NAV curves, spread charts, trade annotations  
+ADF test on residuals
 
----
+Rolling-window stability analysis
 
-## 📊 Visual Results  
+Top 5 pairs shortlisted (e.g., MSFT–AMD, MSFT–NVDA, GOOG–CSCO)
 
-### 📈 Portfolio NAV Curve  
-![NAV Curve](outputs/portfolio_nav.png)  
+Trading Logic
 
-### 🔍 Example Cointegrated Pair Spread  
-![Pair Spread](outputs/pair_spread_example.png)  
+Compute spread & hedge ratio (β)
 
-### 📑 Sample Trade Log  
-![Trades](outputs/trades_example.png)  
+Generate entry/exit signals from spread z-scores
+
+Backtest with transaction costs (0.05%–0.30% round-trip)
+
+Evaluation
+
+CAGR, Sharpe ratio, annualized volatility
+
+Max drawdown, win rate, trade count
+
+Out-of-sample validation
+
+Sensitivity study over multiple z-entry thresholds
 
 ---
 
