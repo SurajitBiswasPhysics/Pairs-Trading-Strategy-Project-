@@ -60,7 +60,6 @@ The workflow covers:
 
 ## 📈 Visualizations
 
-The project generates professional, recruiter-friendly plots:
 
 1. **Adjusted Prices Timeseries** – Universe of 12 tech stocks.  
 2. **Spread & Z-Score Plot (Best Pair)** – Mean-reverting spread, entry/exit signals.  
