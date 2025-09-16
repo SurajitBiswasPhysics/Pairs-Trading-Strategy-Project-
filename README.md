@@ -69,7 +69,6 @@ The project generates professional, recruiter-friendly plots:
 5. **Train vs OOS Scatterplot** – Robustness check across all pairs.  
 6. **Trade Returns Histogram (Best Pair)** – Risk distribution view.  
 
-All plots are saved automatically in the `artifacts/` folder for LinkedIn showcase.
 
 ---
 
